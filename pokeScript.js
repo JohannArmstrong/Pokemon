@@ -41,7 +41,13 @@ async function buscarPokemon() {
             <p>Abilidades: ${data.abilities.map(a => a.ability.name).join(", ")}</p>
             <p>Altura: ${data.height / 10}m</p>
             <p>Peso: ${data.weight / 10}kg</p>
+            <button onclick="toggleFavorite('${data.name}')">
+                ${isFavorite(data.name) ? "Eliminar de Favoritos" : "Agregar a Favoritos"}
+            </button>
         `;
+
+        mostrarFavoritos();
+        cargarPrimerosDiez();
 
     } catch (e) {
         console.error(e);
@@ -81,7 +87,13 @@ async function clickPokemon(nombre) {
             <p>Abilidades: ${data.abilities.map(a => a.ability.name).join(", ")}</p>
             <p>Altura: ${data.height / 10}m</p>
             <p>Peso: ${data.weight / 10}kg</p>
+            <button onclick="toggleFavorite('${data.name}')">
+                ${isFavorite(data.name) ? "Eliminar de Favoritos" : "Agregar a Favoritos"}
+            </button>
         `;
+
+        mostrarFavoritos();
+        cargarPrimerosDiez();
 
     } catch (e) {
         console.error(e);
@@ -104,7 +116,6 @@ async function cargarPrimerosDiez() {
 
         const datos = await Promise.all(respuestas.map(res => res.json()));
         
-        //
         //el primer onclick llama a una modificación de la búsqueda normal
         //el otro onclick llama a la función que le dice si es favorito o no para seleccionar el texto a mostrar
         containerTen.innerHTML = datos.map(data => `
