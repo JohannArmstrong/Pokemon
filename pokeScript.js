@@ -149,12 +149,15 @@ function toggleFavorite(name) {
         favorites.push(name);
     }
 
-    //el JSON.stringify convierte convierte 
+    //el JSON.stringify convierte un tipo de jscript a json
     localStorage.setItem("favorites", JSON.stringify(favorites));
 
-    cargarPrimerosDiez(); //recargar la lista para actualizar el estado de los favoritos
+    cargarPrimerosDiez()//recargar la lista para actualizar el estado de los favoritos
 
-    mostrarFavoritos(); //muestra favoritos actualizados
+    mostrarFavoritos()//muestra favoritos actualizados
+
+    buscarPokemon()//solución para cuando el favorito viene de la búsqueda
+    //todavía falta que se actualize el texto del botón cuando viene de "clickPokemon"
 }
 
 //usa la lógica de la función cargarPrimerosDiez
