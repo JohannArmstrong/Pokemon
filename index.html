@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los bichitos</title>
+    <link rel="stylesheet" href="pokeStyle.css">
+</head>
+<body>
+    <header>
+        <img src="resources/logo.png" alt="pokemon logo">
+        <h1>Buscá a tu bichito</h1>
+    </header>
+
+    <div class="mainContainer">
+
+        <div class="buscador">
+            <label for="busqueda">Ingresa nombre yankee o id del pokemon</label>
+            <br>
+            <input type="text" id="busqueda">
+            <button id="searchBtn">Buscar</button>
+        </div>
+
+        <div id="buscado" class="buscado"></div>
+
+        <h2>Tal vez te interesen:</h2>
+        <div class="containerTen"></div>
+
+        <h2>Favoritos</h2>
+        <div class="favoritesContainer"></div>
+
+    </div>
+
+    <script src="pokeScript.js"></script>
+</body>
+</html>
